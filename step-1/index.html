@@ -36,17 +36,35 @@
   <div class="main"></div>
 
 
-  <!-- TODO: CREATE APP SHELL -->
-
-
-
-  <!-- CREATE APP SHELL ARCHITECTURE -->
-
+  <script type="text/javascript">
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('./service-worker.js', { scope: './' })
+        .then(function (register) {
+          if (register.installing) {
+            console.log('serviceWorker: installing');
+          }
+          else if (register.waiting) {
+            console.log('serviceWorker: waiting');
+          }
+          else if (register.active) {
+            console.log('serviceWorker: activated');
+          }
+        })
+        .catch(function (error) {
+          console.warn('serviceWorker: Error ', error);
+        });
+    }
+    else {
+      console.warn('serviceWorker: not supported');
+    }
+  </script>
 
 
   <!-- TODO: CREATE APP CONTENT FOR THE DYNAMIC CONTENT -->
 
   <script src="./js/menu.js" type="text/javascript"></script>
+
+
   <script src="./js/git-api.js" type="text/javascript"></script>
 </body>
 </html>
