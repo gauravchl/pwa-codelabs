@@ -1,4 +1,4 @@
-(function () {
+(function() {
   'use strict';
 
   var menuIconElement = document.querySelector('.header__icon');
@@ -11,8 +11,7 @@
   function toggleMenu() {
     if (!isMenuOpen()) {
       showMenu();
-    }
-    else {
+    } else {
       hideMenu();
     }
   }
@@ -30,4 +29,9 @@
     menuElement.classList.add('menu--show');
     menuOverlayElement.classList.add('menu__overlay--show');
   }
+
+
+
+
+
 })();
