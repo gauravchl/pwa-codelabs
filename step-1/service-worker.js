@@ -7,7 +7,7 @@ var filesToCache = [
   './css/styles.css',
 ];
 
-this.addEventListener('install', function (event) {
+self.addEventListener('install', function (event) {
   console.log('serviceWorker: install event listener')
   event.waitUntil(
   	caches.open(cacheName)
@@ -21,19 +21,17 @@ this.addEventListener('install', function (event) {
   			console.warn("[INSTALL] Error while caching ", err);
   		})
 	);
-  return '';
-
 
 });
 
-this.addEventListener('activate', function (event) {
+self.addEventListener('activate', function (event) {
   console.log('serviceWorker: activate event listener')
 
 
 
 });
 
-this.addEventListener('fetch', function (event) {
+self.addEventListener('fetch', function (event) {
   console.log('serviceWorker: fetch event listener')
 
 
